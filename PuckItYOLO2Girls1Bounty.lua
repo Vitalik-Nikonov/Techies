@@ -5,12 +5,12 @@ BountyHunter.optionKillSteal = Menu.AddOptionBool({"Hero Specific", "Bounty Hunt
 BountyHunter.optionKey = Menu.AddKeyOption({"Hero Specific","Bounty Hunter"}, "2. Combo Key", Enum.ButtonCode.KEY_S)
 BountyHunter.ToggleKey = Menu.AddKeyOption({"Hero Specific", "Bounty Hunter"}, "3. Auto Mode Toggle Key", Enum.ButtonCode.KEY_D)
 BountyHunter.AutoTrackStyle = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "3.1. Auto Track Enable", "Enable or Disable Auto Track Style", false)
-BountyHunter.AutoTrackStyleValues = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "3.2. Auto Track Style", "Choose between Auto-Shadow Walk after Auto Track, or only Auto Track",  0, 1, 1, false)
+BountyHunter.AutoTrackStyleValues = Menu.AddOptionSlider({"Hero Specific", "Bounty Hunter"}, "3.2. Auto Track Style", "Choose between Auto-Shadow Walk after Auto Track, or only Auto Track",  0, 1, 1)
 BountyHunter.ScrollBoTsCancel = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "4. Auto-Cancel TPs and Ult Channel", "Cancels TP/BoT/Ult Channels with Shuriken", false)
 
 --Auto Track Kill Threshold--
 BountyHunter.ThresholdEnable = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "5. Enable Auto Track on %", "Enables or Disable Auto Track on Desired Enemy HP %", false)
-BountyHunter.KillableHealth = Menu.AddOptionBool({ "Hero Specific", "Bounty Hunter", "5.1 Set Threshold %"}, "Treshold Hero Health", "Set threshold for Killable Enemy", 5, 75, 5, false)
+BountyHunter.KillableHealth = Menu.AddOptionSlider({ "Hero Specific", "Bounty Hunter", "5.1 Set Threshold %"}, "Treshold Hero Health", "Set threshold for Killable Enemy", 5, 75, 5)
 BountyHunter.FontLarge = Renderer.LoadFont("Calibri", 24, Enum.FontWeight.EXTRABOLD)
 
 --Skills Toggle Menu--
