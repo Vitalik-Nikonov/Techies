@@ -16,7 +16,7 @@ BountyHunter.FontLarge = Renderer.LoadFont("Calibri", 24, Enum.FontWeight.EXTRAB
 --Skills Toggle Menu--
 BountyHunter.optionEnableWind = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shadow Walk in Combo","Enable Or Disable", false)
 BountyHunter.optionEnableShuriken = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shuriken in Combo","Enable Or Disable", false)
-BountyHunter.optionEnableTrack = Menu.AddOption({"Hero Specific","Bounty Hunter","6. Skills"},"Use Track in Combo","Enable Or Disable")
+BountyHunter.optionEnableTrack = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","6. Skills"},"Use Track in Combo","Enable Or Disable", false)
 
 --Items Toggle Menu--
 BountyHunter.optionEnableAbyssal = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Abyssal in Combo","Use Abyssal on Target During Combo", false)
