@@ -1,12 +1,12 @@
 local BountyHunter = {}
 
-BountyHunter.optionEnable = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "0. Enabled", "Enable Or Disable BH Script")
-BountyHunter.optionKillSteal = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "1. Tracked Bounce KS", "Calculates killable target through bounces if tracked")
+BountyHunter.optionEnable = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "0. Enabled", "Enable Or Disable BH Script", false)
+BountyHunter.optionKillSteal = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "1. Tracked Bounce KS", "Calculates killable target through bounces if tracked", false)
 BountyHunter.optionKey = Menu.AddKeyOption({"Hero Specific","Bounty Hunter"}, "2. Combo Key", Enum.ButtonCode.KEY_S)
 BountyHunter.ToggleKey = Menu.AddKeyOption({"Hero Specific", "Bounty Hunter"}, "3. Auto Mode Toggle Key", Enum.ButtonCode.KEY_D)
-BountyHunter.AutoTrackStyle = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "3.1. Auto Track Enable", "Enable or Disable Auto Track Style")
-BountyHunter.AutoTrackStyleValues = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "3.2. Auto Track Style", "Choose between Auto-Shadow Walk after Auto Track, or only Auto Track",  0, 1, 1)
-BountyHunter.ScrollBoTsCancel = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "4. Auto-Cancel TPs and Ult Channel", "Cancels TP/BoT/Ult Channels with Shuriken")
+BountyHunter.AutoTrackStyle = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "3.1. Auto Track Enable", "Enable or Disable Auto Track Style", false)
+BountyHunter.AutoTrackStyleValues = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "3.2. Auto Track Style", "Choose between Auto-Shadow Walk after Auto Track, or only Auto Track",  0, 1, 1, false)
+BountyHunter.ScrollBoTsCancel = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "4. Auto-Cancel TPs and Ult Channel", "Cancels TP/BoT/Ult Channels with Shuriken", false)
 
 --Auto Track Kill Threshold--
 BountyHunter.ThresholdEnable = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "5. Enable Auto Track on %", "Enables or Disable Auto Track on Desired Enemy HP %")
