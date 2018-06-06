@@ -1,4 +1,3 @@
-local Utility = require("Utility")
 local BountyHunter = {}
 
 BountyHunter.optionEnable = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "0. Enabled", "Enable Or Disable BH Script")
