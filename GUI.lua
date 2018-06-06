@@ -3,7 +3,7 @@ GUI.Enabled			= Menu.AddOptionBool({ "GUI" },	"Enable", "", false)
 GUI.InGameMenu		= Menu.AddOptionBool({ "GUI" },	"In-game menu", "", false)
 GUI.Locale			= Menu.AddOptionBool({ "GUI"},	"Localization", "Select your primary language", 1, 3, false)
 GUI.SelectedTheme	= Menu.AddOptionBool({ "GUI"},	"Theme", "Select GUI theme", 1, 3, false)
-GUI.LockPanel		= Menu.AddOption({ "GUI" },	"Lock panel position", "", false)
+GUI.LockPanel		= Menu.AddOptionBool({ "GUI" },	"Lock panel position", "", false)
 GUI.Key				= Menu.AddKeyOption({ "GUI" }, "Key", Enum.ButtonCode.KEY_BACKQUOTE)
 
 GUIDB.DNFG	= "Do not forget reload scripts after changes"
