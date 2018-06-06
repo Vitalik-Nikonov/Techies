@@ -1,7 +1,7 @@
 local testTeleportMinimap = {}
 
-testTeleportMinimap.optionEnable = Menu.AddOption({"TEST", "Minimap Teleport Info"}, "1. On/Off script.", "Shows teleport")
-testTeleportMinimap.optionEnableWorldDraw = Menu.AddOption({"TEST", "Minimap Teleport Info"}, "2. Enable world draw.", "")
+testTeleportMinimap.optionEnable = Menu.AddOptionBool({"TEST", "Minimap Teleport Info"}, "1. On/Off script.", "Shows teleport", true)
+testTeleportMinimap.optionEnableWorldDraw = Menu.AddOptionBool({"TEST", "Minimap Teleport Info"}, "2. Enable world draw.", "", true)
 testTeleportMinimap.particleTable = {}
 testTeleportMinimap.rgbaTable = { }
 testTeleportMinimap.rgbaTable[0] = 
