@@ -9,29 +9,29 @@ BountyHunter.AutoTrackStyleValues = Menu.AddOptionBool({"Hero Specific", "Bounty
 BountyHunter.ScrollBoTsCancel = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "4. Auto-Cancel TPs and Ult Channel", "Cancels TP/BoT/Ult Channels with Shuriken", false)
 
 --Auto Track Kill Threshold--
-BountyHunter.ThresholdEnable = Menu.AddOption({"Hero Specific", "Bounty Hunter"}, "5. Enable Auto Track on %", "Enables or Disable Auto Track on Desired Enemy HP %")
-BountyHunter.KillableHealth = Menu.AddOption({ "Hero Specific", "Bounty Hunter", "5.1 Set Threshold %"}, "Treshold Hero Health", "Set threshold for Killable Enemy", 5, 75, 5)
+BountyHunter.ThresholdEnable = Menu.AddOptionBool({"Hero Specific", "Bounty Hunter"}, "5. Enable Auto Track on %", "Enables or Disable Auto Track on Desired Enemy HP %", false)
+BountyHunter.KillableHealth = Menu.AddOptionBool({ "Hero Specific", "Bounty Hunter", "5.1 Set Threshold %"}, "Treshold Hero Health", "Set threshold for Killable Enemy", 5, 75, 5, false)
 BountyHunter.FontLarge = Renderer.LoadFont("Calibri", 24, Enum.FontWeight.EXTRABOLD)
 
 --Skills Toggle Menu--
-BountyHunter.optionEnableWind = Menu.AddOption({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shadow Walk in Combo","Enable Or Disable")
-BountyHunter.optionEnableShuriken = Menu.AddOption({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shuriken in Combo","Enable Or Disable")
+BountyHunter.optionEnableWind = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shadow Walk in Combo","Enable Or Disable", false)
+BountyHunter.optionEnableShuriken = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","6. Skills"},"Use Shuriken in Combo","Enable Or Disable", false)
 BountyHunter.optionEnableTrack = Menu.AddOption({"Hero Specific","Bounty Hunter","6. Skills"},"Use Track in Combo","Enable Or Disable")
 
 --Items Toggle Menu--
-BountyHunter.optionEnableAbyssal = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Abyssal in Combo","Use Abyssal on Target During Combo")
-BountyHunter.optionEnableButterfly = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Butterfly in Combo","Use Butterfly on Self During Combo")
-BountyHunter.optionEnableThorn = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use BloodThorn in Combo","Use BloodThorn on Target During Combo")
-BountyHunter.optionEnableDagon = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Dagon in Combo","Use Dagon on Target During Combo")
-BountyHunter.optionEnableEBlade = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use EBlade in Combo","Use EBlade on Target During Combo")
-BountyHunter.optionEnableHalberd = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Halberd in Combo","Use Halberd on Target During Combo")
-BountyHunter.optionEnableMedallion = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Medallion in Combo","Use Medallion on Target During Combo")
-BountyHunter.optionEnableNullifier = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Nullifier in Combo","Use Nullifier on Target During Combo")
-BountyHunter.optionEnableOrchid = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Orchid in Combo","Use Orchid on Target During Combo")
-BountyHunter.optionEnableScythe = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Scythe in Combo","Use Scythe on Target During Combo")
-BountyHunter.optionEnableSolarCrest = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Solar Crest in Combo","Use Solar Crest on Target During Combo")
-BountyHunter.optionEnableUrn = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Urn in Combo","Use Urn on Target During Combo")
-BountyHunter.optionEnableVessel = Menu.AddOption({"Hero Specific","Bounty Hunter","7. Items"},"Use Vessel in Combo","Use Vessel on Target During Combo")
+BountyHunter.optionEnableAbyssal = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Abyssal in Combo","Use Abyssal on Target During Combo", false)
+BountyHunter.optionEnableButterfly = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Butterfly in Combo","Use Butterfly on Self During Combo", false)
+BountyHunter.optionEnableThorn = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use BloodThorn in Combo","Use BloodThorn on Target During Combo", false)
+BountyHunter.optionEnableDagon = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Dagon in Combo","Use Dagon on Target During Combo", false)
+BountyHunter.optionEnableEBlade = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use EBlade in Combo","Use EBlade on Target During Combo", false)
+BountyHunter.optionEnableHalberd = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Halberd in Combo","Use Halberd on Target During Combo", false)
+BountyHunter.optionEnableMedallion = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Medallion in Combo","Use Medallion on Target During Combo", false)
+BountyHunter.optionEnableNullifier = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Nullifier in Combo","Use Nullifier on Target During Combo", false)
+BountyHunter.optionEnableOrchid = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Orchid in Combo","Use Orchid on Target During Combo", false)
+BountyHunter.optionEnableScythe = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Scythe in Combo","Use Scythe on Target During Combo", false)
+BountyHunter.optionEnableSolarCrest = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Solar Crest in Combo","Use Solar Crest on Target During Combo", false)
+BountyHunter.optionEnableUrn = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Urn in Combo","Use Urn on Target During Combo", false)
+BountyHunter.optionEnableVessel = Menu.AddOptionBool({"Hero Specific","Bounty Hunter","7. Items"},"Use Vessel in Combo","Use Vessel on Target During Combo", false)
 
 local AutoMode = false
 
