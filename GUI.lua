@@ -1,15 +1,15 @@
 GUI					= {}
-GUI.Enabled			= Menu.AddOption({ "GUI" },	"Enable", "")
-GUI.InGameMenu		= Menu.AddOption({ "GUI" },	"In-game menu", "")
-GUI.Locale			= Menu.AddOption({ "GUI"},	"Localization", "Select your primary language", 1, 3)
-GUI.SelectedTheme	= Menu.AddOption({ "GUI"},	"Theme", "Select GUI theme", 1, 3)
-GUI.LockPanel		= Menu.AddOption({ "GUI" },	"Lock panel position", "")
+GUI.Enabled			= Menu.AddOptionBool({ "GUI" },	"Enable", "", false)
+GUI.InGameMenu		= Menu.AddOptionBool({ "GUI" },	"In-game menu", "", false)
+GUI.Locale			= Menu.AddOptionBool({ "GUI"},	"Localization", "Select your primary language", 1, 3, false)
+GUI.SelectedTheme	= Menu.AddOptionBool({ "GUI"},	"Theme", "Select GUI theme", 1, 3, false)
+GUI.LockPanel		= Menu.AddOption({ "GUI" },	"Lock panel position", "", false)
 GUI.Key				= Menu.AddKeyOption({ "GUI" }, "Key", Enum.ButtonCode.KEY_BACKQUOTE)
 
 GUIDB.DNFG	= "Do not forget reload scripts after changes"
-GUI.PreCacheItems	= Menu.AddOption({ "GUI", "GUIDB" },	"PreCache items", GUIDB.DNFG)
-GUI.PreCacheHeroes	= Menu.AddOption({ "GUI", "GUIDB" },	"PreCache heroes", GUIDB.DNFG)
-GUI.PreCacheAb		= Menu.AddOption({ "GUI", "GUIDB" },	"PreCache abilities", GUIDB.DNFG)
+GUI.PreCacheItems	= Menu.AddOptionBool({ "GUI", "GUIDB" },	"PreCache items", GUIDB.DNFG, false)
+GUI.PreCacheHeroes	= Menu.AddOptionBool({ "GUI", "GUIDB" },	"PreCache heroes", GUIDB.DNFG, false)
+GUI.PreCacheAb		= Menu.AddOptionBool({ "GUI", "GUIDB" },	"PreCache abilities", GUIDB.DNFG, false)
 
 
 Menu.SetValueName(GUI.Locale,			1,	"English")
