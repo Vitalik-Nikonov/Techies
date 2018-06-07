@@ -1,6 +1,6 @@
 local AutoUseItems = {}
 
-AutoUseItems.optionSoulRing = Menu.AddOptionBool({ "Utility"}, "Soul Ring", "Auto use soul ring before casting spells or items", false)
+AutoUseItems.optionSoulRing = Menu.AddOptionBool({ "Utility", "Item Specific"}, "Soul Ring", "Auto use soul ring before casting spells or items", false)
 
     local myHero = Heroes.GetLocal()
     if not myHero then return end
