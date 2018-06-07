@@ -1,6 +1,6 @@
 local AutoStash = {}
 
-AutoStash.optionEnable = Menu.AddOption({ "Utility", "Auto Stash Item" }, "Enable", "Auto stash items when in base")
+AutoStash.optionEnable = Menu.AddOptionBool({ "Utility", "Auto Stash Item" }, "Enable", "Auto stash items when in base", false)
 
 AutoStash.dontStashList = {
     item_aegis = true,
