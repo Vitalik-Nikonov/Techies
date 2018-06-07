@@ -1,9 +1,6 @@
-local Utility = require("Utility")
-local AutoStash = require("AutoStash")
-
 local AutoUseItems = {}
 
-AutoUseItems.optionSoulRing = Menu.AddOptionBool({"Item Specific"}, "Soul Ring", "Auto use soul ring before casting spells or items", false)
+AutoUseItems.optionSoulRing = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Soul Ring", "Auto use soul ring before casting spells or items", false)
 
 function AutoUseItems.OnUpdate()
     local myHero = Heroes.GetLocal()
