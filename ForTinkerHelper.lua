@@ -1,6 +1,3 @@
-local Utility = require("Utility")
-local AutoStash = require("AutoStash")
-
 local AutoUseItems = {}
 
 AutoUseItems.optionSoulRing = Menu.AddOptionBool({ "Utility", "Item Specific"}, "Soul Ring", "Auto use soul ring before casting spells or items", false)
