@@ -34,7 +34,8 @@ Tinker.menuItems =          {ItemSoulring = "Soul Ring",
                             ItemVeil = "Veil of Discord",
                             ItemBlink = "Blink Dagger",
                             ItemOrchid = "Orchid Malevolence",
-                            ItemShiva = "Shiva's Guard"}
+                            ItemShiva = "Shiva's Guard"
+                            ItemBottle = "Bottle"}
                             --ItemEuls = "Euls"}
 
 Tinker.menuItemsHandle =    {ItemSoulring,
@@ -44,7 +45,8 @@ Tinker.menuItemsHandle =    {ItemSoulring,
                             ItemVeil,
                             ItemBlink,
                             ItemOrchid,
-                            ItemShiva}
+                            ItemShiva
+                            ItemBottle}
                             --ItemEuls}
                             
 
@@ -105,6 +107,7 @@ local ItemBlink = nil
 local ItemOrchid = nil
 local ItemShiva = nil
 local ItemEuls = nil
+local ItemBootle = nil
 
 local NextNukeTime = 0
 local NextRefreshTime = 0
@@ -145,6 +148,7 @@ function Tinker.OnGameEnd()
     ItemOrchid = nil
     ItemShiva = nil
     ItemEuls = nil
+    ItemBottle = nil
 
     --Log.Write("Tinker > OnGameEnd() -> reset done")
 end
@@ -433,6 +437,7 @@ function Tinker.FetchItems()
     ItemSoulring = NPC.GetItem(MyHero, "item_soul_ring")
     ItemEuls = NPC.GetItem(MyHero, "item_cyclone")
     ItemVeil = NPC.GetItem(MyHero, "item_veil_of_discord")
+    ItemBottle = NPC.GetItem(MyHero, "item_bottle")
 end
 
 -- UseItem(Item item, MenuHandle handle) - uses item properly (in enemy or in ground nearby him)
