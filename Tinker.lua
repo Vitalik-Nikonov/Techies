@@ -529,26 +529,6 @@ function Tinker.UseBlink()
                             MyHero,
                             false,
                             false)
-		if Menu.IsEnabled(Tinker.ExtraSoul) then
-			local sr = NPC.GetItem(Tinker.Hero, "item_soul_ring", true)
-			if	sr ~= nil 
-				and Ability.IsCastable(sr, Tinker.ManaPoint)
-				and Entity.GetHealth(Tinker.Hero) > Menu.GetValue(Tinker.ExtraSoulT)
-			then
-				Ability.CastNoTarget(sr)
-			end
-		end
-		
-		if Menu.IsEnabled(Tinker.ExtraBottle) then
-			local bott = NPC.GetItem(Tinker.Hero, "item_bottle", true)
-			if	bott ~= nil 
-				and Ability.IsCastable(bott, Tinker.ManaPoint)
-				and (Entity.GetHealth(Tinker.Hero) < Entity.GetMaxHealth(Tinker.Hero) or Tinker.ManaPoint < NPC.GetMaxMana(Tinker.Hero))
-				and not NPC.HasModifier(Tinker.Hero, "modifier_bottle_regeneration")
-			then
-				Ability.CastNoTarget(bott)
-			end
-		end
         return true
     end
     return false
@@ -577,6 +557,83 @@ function Tinker.EnemySelector()
     end
 
     temp_enemy = nil
+end
+
+function Tinker.OnPrepareUnitOrders(orders)
+	if not Tinker.Enabled then return true end
+	
+	if	orders.ability ~= nil 
+		and Entity.IsAbility(orders.ability) 
+	then
+		if orders.order == Enum.UnitOrder.DOTA_UNIT_ORDER_CAST_NO_TARGET then
+			if Menu.IsEnabled(Tinker.FailRockets) then
+				if Ability.GetName(orders.ability) == "tinker_heat_seeking_missile"
+				then
+					local c = #Entity.GetHeroesInRadius(Tinker.Hero, Ability.GetCastRange(orders.ability), Enum.TeamType.TEAM_ENEMY)
+					if c == 0 then	return false end
+				end
+			end
+			
+			if Menu.IsEnabled(Tinker.FailRearm) then
+				if Ability.GetName(orders.ability) == "tinker_rearm"
+				then
+					if GameRules.GetGameTime() < Tinker.FailTimeRearm then return false end
+					local abilityRearm = NPC.GetAbility(Tinker.Hero, 'tinker_rearm')
+					if Ability.IsChannelling(abilityRearm) then
+						return false
+					else
+						Tinker.FailTimeRearm = Ability.GetCastPoint(orders.ability) + NetChannel.GetAvgLatency(Enum.Flow.FLOW_OUTGOING) + GameRules.GetGameTime() + 0.1
+					end
+
+					if Menu.IsEnabled(Tinker.FailRearmAI) then
+						local ret = false
+						for i = 0, 5 do 
+							local item = NPC.GetItemByIndex(Tinker.Hero, i)
+							local ab = NPC.GetAbilityByIndex(Tinker.Hero, i)
+							
+							if ab ~= nil and Ability.GetCooldown(ab) > 0 then
+								ret = true
+							end
+							
+							if item ~= nil and Ability.GetCooldown(item) > 0 then
+								ret = true
+							end
+						end
+						
+						if not ret then return ret end
+					end
+				end
+				
+				-- Tinker.ExtraSoul
+				-- Tinker.ExtraBottle
+			end
+		end
+		
+		
+		if Menu.IsEnabled(Tinker.ExtraSoul) then
+			local sr = NPC.GetItem(Tinker.Hero, "item_soul_ring", true)
+			if	sr ~= nil 
+				and Ability.IsCastable(sr, Tinker.ManaPoint)
+				and Entity.GetHealth(Tinker.Hero) > Menu.GetValue(Tinker.ExtraSoulT)
+			then
+				Ability.CastNoTarget(sr)
+			end
+		end
+		
+		if Menu.IsEnabled(Tinker.ExtraBottle) then
+			local bott = NPC.GetItem(Tinker.Hero, "item_bottle", true)
+			if	bott ~= nil 
+				and Ability.IsCastable(bott, Tinker.ManaPoint)
+				and (Entity.GetHealth(Tinker.Hero) < Entity.GetMaxHealth(Tinker.Hero) or Tinker.ManaPoint < NPC.GetMaxMana(Tinker.Hero))
+				and not NPC.HasModifier(Tinker.Hero, "modifier_bottle_regeneration")
+			then
+				Ability.CastNoTarget(bott)
+			end
+		end
+	end
+	
+	
+	return true
 end
 
 return Tinker
