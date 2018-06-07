@@ -1,6 +1,6 @@
 local autoBottle = {}
 
-autoBottle.optionEnable = Menu.AddOptionBool({ "Utility" }, "Auto Bottle", "Auto Bottle when you on your base. Script by Rednelss")
+autoBottle.optionEnable = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Auto Bottle", "Auto Bottle when you on your base. Script by Rednelss")
 
 function autoBottle.OnUpdate()
 	if not Menu.IsEnabled(autoBottle.optionEnable) then return end
