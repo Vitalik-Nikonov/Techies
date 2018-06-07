@@ -21,6 +21,11 @@ Tinker.selectorAwareBlademail = Menu.AddOptionBool({"Hero Specific", "Tinker", "
 -- Menu keys
 Tinker.menuComboKey = Menu.AddKeyOption({"Hero Specific", "Tinker"}, "Key: Combo", Enum.ButtonCode.KEY_G)
 
+-- Menu autouse
+Tinker.ExtraSoul = Menu.AddOption({ "Hero Specific","Tinker", "Extra", "Items" }, "Soul Ring", "Cast Soul Ring before each ability")
+Tinker.ExtraSoulT = Menu.AddOption({ "Hero Specific","Tinker", "Extra", "Items" }, "Soul Ring Threshold", "", 150, 500, 50)
+Tinker.ExtraBottle = Menu.AddOption({ "Hero Specific","Tinker", "Extra", "Items" }, "Bottle", "Drink bottle on yourself before each ability")
+
 -- Menu items
 Tinker.menuItems =          {ItemSoulring = "Soul Ring",
                             ItemHex = "Scythe of Vise",
