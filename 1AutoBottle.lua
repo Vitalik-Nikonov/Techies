@@ -1,7 +1,7 @@
 local AutoBottle = {}
 
 
-AutoBottle.optionEnable = Menu.AddOptionBool({ "Utility" }, "Auto Bottle")
+AutoBottle.optionEnable = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Auto Bottle")
     function AutoBottle.OnUpdate()
 	if not Menu.IsEnabled(AutoBottle.optionEnable) then return end
 	local myHero = Heroes.GetLocal()
