@@ -13,7 +13,7 @@ AutoBottle.optionEnable = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Auto Bot
 	local myHero = Heroes.GetLocal()
 	local Use = NPC.GetItem(myHero, "item_bottle", true)
 	if Menu.IsEnabled(AutoBottle.optionEnable) then
-        if NPC.GetMaxMana(MyHero) and AutoBottle and Ability.IsReady(AutoBottle) then
+        if NPC.GetMaxMana(MyHero) and AutoBottle then
             Ability.CastNoTarget(AutoBottle)
             return
         end
