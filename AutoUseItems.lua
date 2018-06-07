@@ -1,10 +1,24 @@
 local AutoUseItems = {}
 
-AutoUseItems.optionSoulRing = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Soul Ring", "Auto use soul ring before casting spells or items", false)
+local MenuPath = { "Utility", "AutoUse", "AutoUseItems" }
+
+AutoUseItems.optionSoulRing = Menu.AddOptionBool(MenuPath, "Soul Ring", "Auto use soul ring before casting spells or items", false)
 
 function AutoUseItems.OnUpdate()
-    local myHero = Heroes.GetLocal()
-    if not myHero then return end
+    if ((os.clock() - AutoUseItems.LastUpdateTime) < AutoUseItems.UpdateTime) then
+        return
+    end
+    AutoUseItems.LastUpdateTime = os.clock()
+
+    local MyHero = Heroes.GetLocal()
+    if not MyHero or not Entity.IsAlive(MyHero) or NPC.IsStunned(MyHero) or NPC.IsSilenced(MyHero) then
+        return
+    end
+
+    local Soul Ring = NPC.GetItem(MyHero, "item_Soul Ring", true)
+    if not Soul Ring then
+        return
+    end
 	
 -- auto use soul ring before casting spells or items
 function AutoUseItems.OnPrepareUnitOrders(orders)
