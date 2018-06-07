@@ -1,21 +1,21 @@
-local Tinker = {}
-Tinker.IsEnabled = Menu.AddOptionBool({ "Hero Specific","Tinker" }, "Enabled", "")
-Tinker.Version = Menu.AddOptionBool({ "Hero Specific","Tinker" }, "Version", "- Bug fixes", 1,1,1)
+local Tinkerr = {}
+Tinker.IsEnabled = Menu.AddOptionBool({ "Hero Specific","Tinkerr" }, "Enabled", "")
+Tinker.Version = Menu.AddOptionBool({ "Hero Specific","Tinkerr" }, "Version", "- Bug fixes", 1,1,1)
 Menu.SetValueName(Tinker.Version, 1, "4.3.3")
-Tinker.DMGCalculator = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra" }, "DMG Calculator", "", 1, 3)
+Tinker.DMGCalculator = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra" }, "DMG Calculator", "", 1, 3)
 Menu.SetValueName(Tinker.DMGCalculator, 1, "Off")
 Menu.SetValueName(Tinker.DMGCalculator, 2, "Enabled - Bar")
 Menu.SetValueName(Tinker.DMGCalculator, 3, "Enabled - Mouse")
-Tinker.KillIndicator = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra" }, "Kill Indicator", "")
-Tinker.FailRockets = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Fail Switch" }, "Fail Rockets", "")
-Tinker.FailRearm = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Fail Switch" }, "Fail Rearm", "")
+Tinker.KillIndicator = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra" }, "Kill Indicator", "")
+Tinker.FailRockets = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Fail Switch" }, "Fail Rockets", "")
+Tinker.FailRearm = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Fail Switch" }, "Fail Rearm", "")
 
-Tinker.ExtraSoul = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Items" }, "Soul Ring", "Cast Soul Ring before each ability")
-Tinker.ExtraSoulT = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Items" }, "Soul Ring Threshold", "", 150, 500, 50)
-Tinker.ExtraBottle = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Items" }, "Bottle", "Drink bottle on yourself before each ability")
+Tinker.ExtraSoul = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Items" }, "Soul Ring", "Cast Soul Ring before each ability")
+Tinker.ExtraSoulT = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Items" }, "Soul Ring Threshold", "", 150, 500, 50)
+Tinker.ExtraBottle = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Items" }, "Bottle", "Drink bottle on yourself before each ability")
 
-Tinker.FailRearmAI = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra", "Fail Switch" }, "Fail Rearm - check abilities / items", "")
-Tinker.KillSteal = Menu.AddOptionBool({ "Hero Specific","Tinker", "Extra" }, "Steal Kill by Spells", "")
+Tinker.FailRearmAI = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra", "Fail Switch" }, "Fail Rearm - check abilities / items", "")
+Tinker.KillSteal = Menu.AddOptionBool({ "Hero Specific","Tinkerr", "Extra" }, "Steal Kill by Spells", "")
 Tinker.FontDMG = Renderer.LoadFont("Tahoma", 16, Enum.FontWeight.BOLD)
 Tinker.FontKill = Renderer.LoadFont("Tahoma", 30, Enum.FontWeight.BOLD)
 
