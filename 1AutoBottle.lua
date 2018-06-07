@@ -1,34 +1,16 @@
-local Bottle = {}
+local autoBottle = {}
 
-Bottle.Enable = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Bottle", false)
+autoBottle.optionEnable = Menu.AddOptionBool({ "Utility" }, "Auto Bottle", "Auto Bottle when you on your base. Script by Rednelss")
 
-local hero = Heroes.GetLocal()
-    if not hero or not Entity.IsAlive(hero) then
-        return
-    end
-
-    local Bottle = NPC.GetItem(hero, "item_bottle")
-    if not Bottle then
-        return
-    end
-    
-     if Menu.IsEnabled(Bottle.Enable) then
-        if NPC.GetMaxMana(MyHero) - NPC.GetMana(MyHero) > 180 and ArcaneBoots and Ability.IsReady(Bottle) then
-            Ability.CastNoTarget(Bottle)
-            return
-        end
-    end
-
-    if NPC.IsRunning(hero) and Ability.IsReady(Bottle) and Ability.IsCastable(phaseBoots, mana) then
-        Ability.CastNoTarget(Bottle)
-    end
+function autoBottle.OnUpdate()
+	if not Menu.IsEnabled(autoBottle.optionEnable) then return end
+	local myHero = Heroes.GetLocal()
+	if not NPC.HasModifier(myHero, "modifier_fountain_aura_buff") then return end
+	if Entity.GetHealth(myHero) >= Entity.GetMaxHealth(myHero) and NPC.GetMana(myHero) >= NPC.GetMaxMana(myHero) then return end
+	
+	local bottle = NPC.GetItem(myHero, "item_bottle", true)
+	if bottle == nill or not Ability.IsReady(bottle) or NPC.HasModifier(myHero, "modifier_bottle_regeneration") or NPC.IsChannellingAbility(myHero) then return end 			
+	Ability.CastNoTarget(bottle)
 end
 
-    if not Entity.IsAlive(myHero) then
-        return false
-    end
-
-    return false
-end
-
-return Bottle
+return autoBottle
