@@ -6,13 +6,12 @@ AutoBottle.optionEnable = Menu.AddOptionBool({ "Utility", "AutoUse" }, "Auto Bot
 	if not Menu.IsEnabled(AutoBottle.optionEnable) then return end
 	local myHero = Heroes.GetLocal()
 	local Use = NPC.GetItem(myHero, "item_bottle", true)
-	if Use and Ability.IsReady(Use) then
-	if Entity.GetMana(myHero) < Entity.GetMaxMana(myHero) then
-	if not NPC.HasModifier(myHero, "modifier_bottle_regeneration") and not NPC.IsChannellingAbility(myHero) then
-				Ability.CastNoTarget(Use)
-			end
-		end
-	end
+	if Menu.IsEnabled(AutoBottle.optionEnable) then
+        if NPC.GetMaxMana(MyHero) - NPC.GetMana(MyHero) > 180 and AutoBottle and Ability.IsReady(AutoBottle) then
+            Ability.CastNoTarget(AutoBottle)
+            return
+        end
+    end	
 end
 
 return AutoBottle
