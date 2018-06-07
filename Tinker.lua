@@ -313,7 +313,7 @@ function Tinker.DoCombo()
     local enemy = CurrentVictim
     -- in first, maybe autoattack?)
     if not NPC.HasState(enemy, Enum.ModifierState.MODIFIER_STATE_ATTACK_IMMUNE) then
-        Player.AttackTarget(MyPlayer, MyHero, enemy, false)
+        Player.Attack(MyPlayer, MyHero, enemy, false)
     end
     -- soul ring, motherfucker
     if Tinker.UseItem(ItemSoulring, Tinker.menuItemsHandle["ItemSoulring"]) then return end
@@ -529,6 +529,26 @@ function Tinker.UseBlink()
                             MyHero,
                             false,
                             false)
+		if Menu.IsEnabled(Tinker.ExtraSoul) then
+			local sr = NPC.GetItem(Tinker.Hero, "item_soul_ring", true)
+			if	sr ~= nil 
+				and Ability.IsCastable(sr, Tinker.ManaPoint)
+				and Entity.GetHealth(Tinker.Hero) > Menu.GetValue(Tinker.ExtraSoulT)
+			then
+				Ability.CastNoTarget(sr)
+			end
+		end
+		
+		if Menu.IsEnabled(Tinker.ExtraBottle) then
+			local bott = NPC.GetItem(Tinker.Hero, "item_bottle", true)
+			if	bott ~= nil 
+				and Ability.IsCastable(bott, Tinker.ManaPoint)
+				and (Entity.GetHealth(Tinker.Hero) < Entity.GetMaxHealth(Tinker.Hero) or Tinker.ManaPoint < NPC.GetMaxMana(Tinker.Hero))
+				and not NPC.HasModifier(Tinker.Hero, "modifier_bottle_regeneration")
+			then
+				Ability.CastNoTarget(bott)
+			end
+		end
         return true
     end
     return false
