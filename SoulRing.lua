@@ -1,14 +1,14 @@
 local TinkerSB = {}
 
-CrystalMaiden.optionEnable = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Enable", false)
-CrystalMaiden.optionKey = Menu.AddKeyOption({ "Hero Specific", "TinkerSB" }, "Combo Key", Enum.ButtonCode.KEY_1)
+TinkerSB.optionEnable = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Enable", false)
+TinkerSB.optionKey = Menu.AddKeyOption({ "Hero Specific", "TinkerSB" }, "Combo Key", Enum.ButtonCode.KEY_1)
 
--- CrystalMaiden.Addbottle           = Menu.AddOptionBool({"Hero Specific", "TinkerSB", "Combo skills"}, "Rearm", false)
+-- TinkerSB.Addbottle           = Menu.AddOptionBool({"Hero Specific", "TinkerSB", "Combo skills"}, "Rearm", false)
 
-CrystalMaiden.Addbottle = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "Bottle", false)
-CrystalMaiden.Addsoulring = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "SoulRing", false)
+TinkerSB.Addbottle = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "Bottle", false)
+TinkerSB.Addsoulring = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "SoulRing", false)
 
-CrystalMaiden.optionDebug = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Debug", false)
+TinkerSB.optionDebug = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Debug", false)
 
 local last_cast_time = 0
 
@@ -30,9 +30,9 @@ function TinkerSB.OnUpdate()
     end
 end
 
-function CrystalMaiden.Combo(MyHero)
+function TinkerSB.Combo(MyHero)
     local rearm = NPC.GetAbility(MyHero, "tinker_rearm")
-    -- local crystalNova   = NPC.GetAbility(MyHero, "crystal_maiden_crystal_nova")
+    -- local crystalNova   = NPC.GetAbility(MyHero, "tinker_rearm")
     local bottle = NPC.GetItem(MyHero, "item_bottle")
     local soulring = NPC.GetItem(MyHero, "item_soul_ring")
 
@@ -42,7 +42,7 @@ function CrystalMaiden.Combo(MyHero)
 
     TinkerSB.manaCount = NPC.GetMana(MyHero)
     TinkerSB.realManaCount = TinkerSB.manaCount
-    if not CrystalMaiden.manaCount then
+    if not TinkerSB.manaCount then
         return
     end
 
