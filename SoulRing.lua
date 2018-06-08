@@ -3,10 +3,10 @@ local TinkerSB = {}
 CrystalMaiden.optionEnable = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Enable", false)
 CrystalMaiden.optionKey = Menu.AddKeyOption({ "Hero Specific", "TinkerSB" }, "Combo Key", Enum.ButtonCode.KEY_1)
 
--- CrystalMaiden.AddBKB           = Menu.AddOptionBool({"Hero Specific", "TinkerSB", "Combo skills"}, "Crystal Nova", false)
+-- CrystalMaiden.Addbottle           = Menu.AddOptionBool({"Hero Specific", "TinkerSB", "Combo skills"}, "Rearm", false)
 
-CrystalMaiden.AddBKB = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "Bottle", false)
-CrystalMaiden.AddShiva = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "SoulRing", false)
+CrystalMaiden.Addbottle = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "Bottle", false)
+CrystalMaiden.Addsoulring = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "SoulRing", false)
 
 CrystalMaiden.optionDebug = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Debug", false)
 
@@ -55,13 +55,13 @@ function CrystalMaiden.Combo(MyHero)
     TinkerSB.ManaNeed = TinkerSB.GetManaNeed(MyHero, bottle,  soulring)
 
     if TinkerSB.manaCount >= TinkerSB.ManaNeed then
-        if bkb and Menu.IsEnabled(TinkerSB.Addbottle) and Ability.IsCastable(bottle, TinkerSB.manaCount) and Ability.IsReady(bottle) then
+        if bottle and Menu.IsEnabled(TinkerSB.Addbottle) and Ability.IsCastable(bottle, TinkerSB.manaCount) and Ability.IsReady(bottle) then
             if Menu.IsEnabled(TinkerSB.optionDebug) then Log.Write("Use Bottle") end
             Ability.CastNoTarget(bottle, true)
         end
 
 
-        if shiva and Menu.IsEnabled(TinkerSB.Addsoulring) and Ability.IsCastable(shiva, TinkerSB.manaCount) and Ability.IsReady(soulring) then
+        if soulring and Menu.IsEnabled(TinkerSB.Addsoulring) and Ability.IsCastable(soulring, TinkerSB.manaCount) and Ability.IsReady(soulring) then
             if Menu.IsEnabled(TinkerSB.optionDebug) then Log.Write("Use Soul Ring") end
             Ability.CastNoTarget(soulring, true)
         end
@@ -71,7 +71,7 @@ function TinkerSB.GetManaNeed(MyHero, bottle, soulring)
     local mana = 0
 
     if bottle and Menu.IsEnabled(TinkerSB.Addbottle) then
-        mana = mana + Ability.GetManaCost(bkb)
+        mana = mana + Ability.GetManaCost(bottle)
     end
 
 
