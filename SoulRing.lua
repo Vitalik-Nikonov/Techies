@@ -3,8 +3,6 @@ local TinkerSB = {}
 TinkerSB.optionEnable = Menu.AddOptionBool({ "Hero Specific", "TinkerSB" }, "Enable", false)
 TinkerSB.optionKey = Menu.AddKeyOption({ "Hero Specific", "TinkerSB" }, "Combo Key", Enum.ButtonCode.KEY_1)
 
--- TinkerSB.Addbottle           = Menu.AddOptionBool({"Hero Specific", "TinkerSB", "Combo skills"}, "Rearm", false)
-
 TinkerSB.Addbottle = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "Bottle", false)
 TinkerSB.Addsoulring = Menu.AddOptionBool({ "Hero Specific", "TinkerSB", "Combo items" }, "SoulRing", false)
 
@@ -32,7 +30,6 @@ end
 
 function TinkerSB.Combo(MyHero)
     local rearm = NPC.GetAbility(MyHero, "tinker_rearm")
-    -- local crystalNova   = NPC.GetAbility(MyHero, "tinker_rearm")
     local bottle = NPC.GetItem(MyHero, "item_bottle")
     local soulring = NPC.GetItem(MyHero, "item_soul_ring")
 
@@ -46,7 +43,7 @@ function TinkerSB.Combo(MyHero)
         return
     end
 
-    rearmBManaCost = Ability.GetManaCost(rearm)
+    rearmManaCost = Ability.GetManaCost(rearm)
     if not rearmManaCost then
         return
     end
